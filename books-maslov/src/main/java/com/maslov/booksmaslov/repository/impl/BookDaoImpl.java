@@ -1,6 +1,5 @@
 package com.maslov.booksmaslov.repository.impl;
 
-import com.maslov.booksmaslov.domain.Author;
 import com.maslov.booksmaslov.domain.Book;
 import com.maslov.booksmaslov.exception.MaslovBookException;
 import com.maslov.booksmaslov.repository.BookDao;

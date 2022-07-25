@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -115,5 +116,12 @@ public class BookServiceImpl implements BookService {
         } else {
             System.out.println(GET_ALL);
         }
+    }
+
+    @Override
+    public Set<Comment> getComments() {
+        System.out.println(ENTER_ID);
+        int id = helper.getIdFromUser();
+        return bookDao.getBookById(id).orElseThrow().getListOfComments();
     }
 }

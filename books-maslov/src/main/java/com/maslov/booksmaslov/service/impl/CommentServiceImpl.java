@@ -32,13 +32,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Transactional
     @Override
-    public Set<Comment> getAllCommentsForBook() {
-        long idOfBook = serviceHelper.getIdForBook();
-        return commentDao.findCommentsForBookById(idOfBook);
-    }
-
-    @Transactional
-    @Override
     public Set<Comment> createComment() {
         System.out.println("Enter your comment");
         String comm = helper.getFromUser();

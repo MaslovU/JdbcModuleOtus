@@ -39,6 +39,6 @@ public class CommandForShell {
 
     @ShellMethod(value = "get all comments for book", key = "ac")
     public void getAllComments() {
-        commentService.getAllCommentsForBook();
+        service.getComments();
     }
 }

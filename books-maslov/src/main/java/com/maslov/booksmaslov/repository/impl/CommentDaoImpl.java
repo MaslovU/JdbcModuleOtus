@@ -11,9 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.Set;
 
-import static com.maslov.booksmaslov.sql.SQLConstants.GET_BOOK_FOR_COMMENTS_BY_ID;
 import static java.util.Objects.isNull;
 
 @Slf4j
@@ -33,15 +31,6 @@ public class CommentDaoImpl implements CommentDao {
             throw new MaslovBookException("No comment for this ID");
         }
         return em.find(Comment.class, id);
-    }
-
-    @Override
-    public Set<Comment> findCommentsForBookById(Long id) {
-        TypedQuery<Book> query = em.createQuery(GET_BOOK_FOR_COMMENTS_BY_ID, Book.class);
-        query.setParameter("id", id);
-        Book book = checkResult(query, id);
-        return book.getListOfComments();
-
     }
 
     @Override

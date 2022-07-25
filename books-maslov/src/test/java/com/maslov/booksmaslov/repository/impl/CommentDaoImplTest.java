@@ -9,8 +9,6 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.Import;
 
-import java.util.Set;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -33,19 +31,6 @@ class CommentDaoImplTest {
 
         assertThat(comment.getCommentForBook()).isEqualTo(FIRST_COMM);
     }
-
-    @Test
-    void getComments() {
-        Set<Comment> list = dao.findCommentsForBookById(1L);
-        assertThat(list.size()).isEqualTo(6);
-    }
-
-//    @Test
-//    void createComment() {
-//        long commentId = dao.createComment(SECOND_COMMENT).getId();
-//
-//        assertThat(dao.getCommentById(commentId).getCommentForBook()).isEqualTo(SECOND_COMMENT);
-//    }
 
     @Test
     void updateComment() {

@@ -6,8 +6,6 @@ import java.util.Set;
 
 public interface CommentService {
 
-    Set<Comment> getAllCommentsForBook();
-
     Set<Comment> createComment();
 
     Set<Comment> updateComment();
