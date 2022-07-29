@@ -119,7 +119,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public Set<Comment> getComments() {
         System.out.println(ENTER_ID);
         int id = helper.getIdFromUser();
