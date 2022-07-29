@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface CommentService {
 
-    List<Comment> getAllCommentsForBook();
-
     List<Comment> createComment();
 
     List<Comment> updateComment();

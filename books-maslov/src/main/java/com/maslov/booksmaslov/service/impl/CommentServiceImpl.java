@@ -28,12 +28,6 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getAllCommentsForBook() {
-        long idOfBook = getIdForBook();
-        return bookRepo.findById(idOfBook).orElseThrow().getListOfComment();
-    }
-
-    @Override
     @Transactional
     public List<Comment> createComment() {
         long idForBook = getIdForBook();

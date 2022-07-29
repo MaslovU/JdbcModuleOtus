@@ -1,6 +1,7 @@
 package com.maslov.booksmaslov.service.impl;
 
 import com.maslov.booksmaslov.domain.Book;
+import com.maslov.booksmaslov.domain.Comment;
 import com.maslov.booksmaslov.exception.NoBookException;
 import com.maslov.booksmaslov.repository.BookRepo;
 import com.maslov.booksmaslov.service.BookService;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @Slf4j
@@ -82,5 +84,13 @@ public class BookServiceImpl implements BookService {
         } else {
             System.out.println(GET_ALL);
         }
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Comment> getComments() {
+        System.out.println(ENTER_ID);
+        long id = helper.getIdFromUser();
+        return bookRepo.findById(id).orElseThrow().getListOfComment();
     }
 }
